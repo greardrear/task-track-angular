@@ -1,0 +1,19 @@
+
+<button  class="btn btn-primary btn-lg" [routerLink]="['/create-task']">Create a new task</button>
+
+<ul *ngFor="let post of posts" class="list-group">
+    <li [ngClass]="post.isFinished == true ? 
+    ' list-group-item-success d-flex justify-content-between alert alert-success' 
+    : 'list-group-item-danger list-group-item d-flex justify-content-between '" >
+          {{post.title | titlecase}} 
+          <br>
+            <cite>{{post.details}}</cite>
+      <span class="badge bg-primary rounded-pill">{{post.id}}  <button (click)="completeTask(post.id)" type="button" class="btn btn-primary">Check/Uncheck</button>
+        <button  class="btn-close" aria-label="Close" (click)="removeTask(post.id)"></button>
+    </span>
+     
+    </li>
+   
+  </ul>
+
+  
