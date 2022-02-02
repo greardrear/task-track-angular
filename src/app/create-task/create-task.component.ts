@@ -17,6 +17,9 @@ export class CreateTaskComponent implements OnInit {
     details: new FormControl('',[
       Validators.required,
       Validators.minLength(5)
+    ]),
+    mine: new FormControl('', [
+      Validators.required
     ])
   })
 

@@ -1,0 +1,6 @@
+
+<input class="form-control" 
+[value]="value" 
+type="text"
+(blur)="onTouched()"
+(input)="onChange($any ($event.target).value)" >
