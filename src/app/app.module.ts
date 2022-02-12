@@ -8,6 +8,7 @@ import { CreateTaskComponent } from './create-task/create-task.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TitlecasePipe } from './titlecase.pipe';
 import { ControlledInputComponent } from './controlled-input/controlled-input.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ControlledInputComponent } from './controlled-input/controlled-input.co
     PostsComponent,
     CreateTaskComponent,
     TitlecasePipe,
-    ControlledInputComponent
+    ControlledInputComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,

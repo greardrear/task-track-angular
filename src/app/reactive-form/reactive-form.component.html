@@ -1,0 +1,45 @@
+<form *ngIf="myForm"   [formGroup]="myForm">
+    <div class=" form-floating mb-3">
+        <input type="text" formControlName="firstName" id="firstName" class="form-control" placeholder="First Name">
+        <label for="floatinginput">First Name</label>
+        <span class="text-error" *ngIf="firstName.invalid&& firstName.touched">Please enter at least 2 characters!</span>
+
+    </div>
+    <div class=" form-floating mb-3">
+        <input type="text" formControlName="lastName" id="lastName" class="form-control" placeholder="Last Name">
+        <label for="floatinginput">Last Name</label>
+        <span class="text-error" *ngIf="lastName.invalid&& lastName.touched">Please enter at least 2 characters!</span>
+
+    </div>
+    <div class=" form-floating mb-3">
+        <input type="text" formControlName="email" id="email" class="form-control" placeholder="email@email.com">
+        <label for="floatinginput">E-mail</label>
+        <span class="text-error" *ngIf="email.invalid&& email.touched">Make sure you used the correct format</span>
+
+    </div>
+    <div class=" form-floating mb-3">
+        <input type="number" formControlName="phone" id="phone" class="form-control" placeholder="+38123456789">
+        <label for="floatinginput">Phone Number</label>
+        <span class="text-error" *ngIf="phone.invalid&& phone.touched">Make sure to type a correct number</span>
+
+    </div>
+    <div class=" form-floating mb-3">
+        <input type="password" formControlName="password" id="password" class="form-control" placeholder="pass">
+        <label for="floatinginput">Password</label>
+        <span class="text-error" *ngIf="password.invalid&& password.touched">Please enter at least 8 characters!</span>
+
+    </div>
+<div formArrayName="nicknames">
+    <button class="btn btn-primary btn-lg" (click)="addNickname()" type="button">+ Add New Nickname</button>
+
+    <div class=" form-floating mb-3" *ngFor="let nickname of nicknames.controls; let i = index ">
+
+        <input type="text" formControlName="nickname-{{ i }}" id="nickname-{{i}}" class="form-control" placeholder="nickname">
+        <label for="floatinginput">Nickname</label>
+        <span class="text-error" *ngIf="nickname.invalid&& nickname.touched">Please enter a nickname</span>
+
+    </div>
+</div>
+</form>
+
+<button  (click)="submitForm(myForm)" class="btn btn-primary btn-lg"  type="submit">Submit Form</button>
